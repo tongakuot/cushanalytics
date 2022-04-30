@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.80">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Alier Reng">
+  <title>Cush Analytics - Post With Code</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="../../site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="../../">
+  <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="../../site_libs/quarto-search/fuse.min.js"></script>
+  <script src="../../site_libs/quarto-search/quarto-search.js"></script>
+  <link href="../../logo.png" rel="icon" type="image/png">
+  <script src="../../site_libs/quarto-html/quarto.js"></script>
+  <script src="../../site_libs/quarto-html/popper.min.js"></script>
+  <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="../../site_libs/quarto-html/anchor.min.js"></script>
+  <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link class="quarto-color-scheme" href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+  <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link class="quarto-color-scheme" href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="../../site_libs/bootstrap/bootstrap-dark.min.css">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "navbar",
+    "copy-button": false,
+    "collapse-after": 2,
+    "panel-placement": "end",
+    "type": "overlay",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="fullcontent">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../images/logo.png" alt="">
+    <span class="navbar-title">Cush Analytics</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About Me</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://cushanalytics.com/images/resume.pdf/">Resume</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tongakuot/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/tongakuot/"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/tongakuot/"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCWmRRNbHLNtbb13Hi1ucsFA"><i class="bi bi-youtube" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+
+
+<div class="quarto-title"><h1 class="title display-7">Post With Code</h1></div><div class="quarto-categories"><div class="quarto-category">news</div><div class="quarto-category">code</div><div class="quarto-category">analysis</div></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Author</div><div class="quarto-title-meta-contents"><div class="quarto-title-authors"><p>Alier Reng</p></div></div></div><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">April 25, 2022</p></div></div></div></header>
+<p>```{## Introduction}</p>
+<blockquote class="blockquote">
+<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+</blockquote>
+<section id="definitions" class="level3">
+<h3 class="anchored" data-anchor-id="definitions">Definitions</h3>
+<p>Before getting started, let’s explain what each option in the <code>yaml</code> means.</p>
+<ul>
+<li><p><code>toc</code> adds the table of contents to your document.</p></li>
+<li><p><code>number-sections</code> adds number to the section headings when sets to <code>true</code>.</p></li>
+<li><p><code>Latex</code> equations are rendered using <code>MathJax</code>; however, you can change this to other options, as shown above.</p></li>
+<li><p><code>highlight-style</code> is used to style code outputs.</p></li>
+<li><p><code>code-overflow</code> controls the width of source code. When sets to <code>wrap</code>, the source code wraps around and vice versa.</p></li>
+</ul>
+<p>There are numerous options to style and format your document, so we recommend reading the documentation on the <a href="https://quarto.org/docs/output-formats">Quarto website</a>.</p>
+</section>
+<section id="loading-the-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="loading-the-libraries">Loading the Libraries</h3>
+<p>Here we will load <code>pandas</code>, <code>seaborn</code>, and <code>matplotlib</code>.</p>
+</section>
+<section id="loading-packages" class="level1">
+<h1>Loading packages</h1>
+<p>import pandas as pd import matplotlib.pyplot as plt import seaborn as sns</p>
+</section>
+<section id="formatting" class="level1">
+<h1>Formatting</h1>
+<p>sns.set_context(‘notebook’) sns.set_style(‘white’)</p>
+<section id="importing-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="importing-the-dataset">Importing the Dataset</h3>
+</section>
+</section>
+<section id="import-the-data" class="level1">
+<h1>Import the data</h1>
+<p>ss_2008_census_df = pd.read_csv(‘/Users/areng/Desktop/cush_analytics/content/quarto_tutorials/ss_2008_census_data_raw.csv’)</p>
+</section>
+<section id="inspect-the-first-5-rows" class="level1">
+<h1>Inspect the first 5 rows</h1>
+<p>ss_2008_census_df.head()</p>
+</section>
+<section id="inspect-the-last-5-rows" class="level1">
+<h1>Inspect the last 5 rows</h1>
+<p>ss_2008_census_df.tail()</p>
+<p>Above, we see that the three last rows contain <code>nas</code> (missing values). One is the data source where we obtained this dataset, and the other is the data URL.</p>
+<section id="cleaning-and-transforming-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-and-transforming-the-data">Cleaning and Transforming the Data</h2>
+<section id="checking-for-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="checking-for-missing-values">Checking for Missing Values</h3>
+<p>Now that we have imported our dataset, we will clean and manipulate it. First, we will reconfirm the missing values and proceed with our data wrangling process.</p>
+</section>
+</section>
+</section>
+<section id="check-for-missing-values" class="level1">
+<h1>Check for missing values</h1>
+<p>ss_2008_census_df.isna().sum()</p>
+<section id="wrangling-the-data-using-method-chaining" class="level3">
+<h3 class="anchored" data-anchor-id="wrangling-the-data-using-method-chaining">Wrangling the Data Using <code>Method Chaining</code></h3>
+</section>
+</section>
+<section id="select-desired-columns" class="level1">
+<h1>Select desired columns</h1>
+<p>cols = [‘Region Name’, ‘Variable Name’, ‘Age Name’, ‘2008’]</p>
+</section>
+<section id="rename-columns" class="level1">
+<h1>Rename columns</h1>
+<p>cols_names = {‘Region Name’:‘state’, ‘Variable Name’:‘gender’, ‘Age Name’:‘age_cat’, ‘2008’:‘population’}</p>
+</section>
+<section id="create-new-age-categories" class="level1">
+<h1>Create new age categories</h1>
+<p>new_age_cats = {‘0 to 4’:‘0-14’, ‘5 to 9’:‘0-14’, ‘10 to 14’:‘0-14’, ‘15 to 19’:‘15-29’, ‘20 to 24’:‘15-29’, ‘25 to 29’:‘15-29’, ‘30 to 34’:‘30-49’, ‘35 to 39’:‘30-49’, ‘40 to 44’:‘30-49’, ‘45 to 49’:‘30-49’, ‘50 to 54’:‘50-64’, ‘55 to 59’:‘50-64’, ‘60 to 64’:‘50-64’, ‘65+’:‘&gt;= 65’ }</p>
+</section>
+<section id="clean-the-data" class="level1">
+<h1>Clean the data</h1>
+<p>df = (ss_2008_census_df [cols] .rename(columns = cols_names) .query(‘~age_cat.isna()’) .assign(gender = lambda x:x[‘gender’].str.split(‘+’).str[1], age_cat = lambda x:x[‘age_cat’].replace(new_age_cats), population = lambda x:x[‘population’].astype(‘int’) ) .query(‘gender != “Total” &amp; age_cat != “Total”’) # .drop(columns = ‘pop_cat’, axis = ‘column’) .groupby([‘state’, ‘gender’, ‘age_cat’])[‘population’] .sum() .reset_index() )</p>
+</section>
+<section id="inspect-the-first-5-rows-1" class="level1">
+<h1>Inspect the first 5 rows</h1>
+<p>df.head()</p>
+<section id="summarizing-census-data" class="level2">
+<h2 class="anchored" data-anchor-id="summarizing-census-data">Summarizing Census Data</h2>
+<section id="population-by-state" class="level3">
+<h3 class="anchored" data-anchor-id="population-by-state">Population by State</h3>
+</section>
+</section>
+</section>
+<section id="calculate-census-data-by-state" class="level1">
+<h1>Calculate census data by state</h1>
+<p>st_df = (df<br>
+.groupby([‘state’])[‘population’] .sum() .reset_index() .sort_values(‘population’, ascending=False, ignore_index=True) )</p>
+</section>
+<section id="display-the-outpout" class="level1">
+<h1>Display the outpout</h1>
+<p>st_df</p>
+<section id="population-by-state-and-gender" class="level3">
+<h3 class="anchored" data-anchor-id="population-by-state-and-gender">Population by State and Gender</h3>
+</section>
+</section>
+<section id="calculate-census-data-by-state-and-gender" class="level1">
+<h1>Calculate census data by state and gender</h1>
+<p>gender_df = (df<br>
+.groupby([‘state’, ‘gender’])[‘population’] .sum() .reset_index() .sort_values(‘population’, ascending=False, ignore_index=True) )</p>
+</section>
+<section id="display-the-outpout-1" class="level1">
+<h1>Display the outpout</h1>
+<p>gender_df.head()</p>
+<section id="population-by-state-gender-and-age-category" class="level3">
+<h3 class="anchored" data-anchor-id="population-by-state-gender-and-age-category">Population by State, Gender, and Age Category</h3>
+</section>
+</section>
+<section id="calculate-census-data-by-state-gender-and-age-category" class="level1">
+<h1>Calculate census data by state, gender, and age category</h1>
+<p>age_df = (df<br>
+.groupby([‘state’, ‘gender’, ‘age_cat’])[‘population’] .sum() .reset_index() .sort_values([‘state’,‘population’], ascending = [True, False], ignore_index = True) )</p>
+</section>
+<section id="display-the-outpout-2" class="level1">
+<h1>Display the outpout</h1>
+<p>age_df.head(5)</p>
+<section id="closing-remarks" class="level2">
+<h2 class="anchored" data-anchor-id="closing-remarks">Closing Remarks</h2>
+<p>This tutorial demonstrates creating a Quarto document with various yaml options to style and format the output. We hope you will find this tutorial helpful. Please let us know if there are any topics you want us to do a tutorial on.</p>
+<p>With that said, our next tutorial will be on R.</p>
+<p>```</p>
+
+
+</section>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+    } else {
+      disableStylesheet(alternateStylesheets);
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="tongakuot/cushanalytics_comments" data-repo-id="" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://cushanalytics.com">© 2022 Cush Analytics. All rights reserved.</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About Me</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://cushanalytics.com/images/resume.pdf/">Resume</a>
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+</body></html>

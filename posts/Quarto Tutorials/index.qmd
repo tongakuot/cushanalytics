@@ -1,0 +1,33 @@
+---
+title: "Quarto Tutorial 1"
+author: "Alier Reng"
+date: "4/29/2022"
+date-format: full
+description: ""
+categories: [Quarto, Python, R, Data Science]
+image: "banner-5.jpg"
+---
+
+$f(x) = \int(3x^3 + 4x)dx$
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+  cache = FALSE,
+  cache.lazy = FALSE,
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE)
+
+```
+
+```{r}
+# Libraries
+library(tidyverse)
+library(lubridate)
+library(vroom)
+```
+
+```{python}
+4+9
+```

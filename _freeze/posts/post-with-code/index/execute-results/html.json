@@ -1,0 +1,14 @@
+{
+  "hash": "ecc38422b92b3b20411c97bfcfbb8747",
+  "result": {
+    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Alier Reng\"\ndate: \"4/25/2022\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\nThis is a post with executable code.\n\n::: {.cell}\n\n```{.r .cell-code}\nprop.test(12, 60, alternative = \"less\")\n```\n\n::: {.cell-output-stdout}\n```\n\n\t1-sample proportions test with continuity correction\n\ndata:  12 out of 60, null probability 0.5\nX-squared = 20.417, df = 1, p-value = 3.114e-06\nalternative hypothesis: true p is less than 0.5\n95 percent confidence interval:\n 0.0000000 0.3062091\nsample estimates:\n  p \n0.2 \n```\n:::\n:::\n\n::: {.cell}\n\n```{.python .cell-code}\nimport pandas as pd\nimport numpy as np\nfrom IPython.display import display, Markdown, Math\n\nimport sympy as sym\n\nx = sym.symbols('x')\n\neq = x**2 + 3*x\n\ndisplay(Math('x**2 + 3*x'))\n```\n\n::: {.cell-output-stdout}\n```\n<IPython.core.display.Math object>\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": [],
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": null
+  }
+}

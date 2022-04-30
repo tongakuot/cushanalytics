@@ -1,0 +1,25 @@
+---
+title: "Welcome To Cush Analytics!"
+author: "Alier Reng"
+date: "4/22/2022"
+date-format: full
+description: "We strive to help learners understand the fundamentals of data science using real-world datasets."
+categories: [News]
+---
+
+Hello, data scientists and analysts!
+
+Cush Analytics is my data science blog, through which we share tutorials and articles on data science, statistics, R, Python, machine learning (ML), and natural language processing (NLP).
+I want to pay KINDNESS forward as former refugee children through online knowledge-sharing.
+
+[![Photo by Christopher Gowe on Unsplash](/images/banner-1.jpg){width="770"}](https://unsplash.com/photos/vjMgqUkS8q8)
+
+I believe we can create positive impacts in the world by helping those who want to learn how to leverage data science and machine learning techniques to derive business insights from raw data.
+
+Please connect and follow us on [Twitter](https://twitter.com/tongakuot), [LinkedIn](https://www.linkedin.com/in/tongakuot/), and [YouTube](https://www.youtube.com/channel/UCWmRRNbHLNtbb13Hi1ucsFA)!
+
+Happy Learning!
+
+------------------------------------------------------------------------
+
+Cush Analytics Team
