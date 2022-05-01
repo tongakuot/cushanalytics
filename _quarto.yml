@@ -4,18 +4,19 @@ project:
 website:
   title: "Cush Analytics"
   favicon: logo.png
+  #reader-mode: true
+  
+  # google analytics
+  google-analytics: "ua-164226979-1"
   
   navbar:
     logo: images/logo.png
-    reader-mode: true
-    # google analytics
-    googleAnalytics: "ua-164226979-1"
-    disqusShortname: "alierreng" 
+    
     right:
       - text: "About Me"
         href: about.qmd
       - text: "Resume"
-        href: "https://cushanalytics.com/resume.pdf/"
+        href: "https://cushanalytics.com/resume.pdf"
       - icon: github
         href: https://github.com/tongakuot/
       - icon: twitter
@@ -46,11 +47,11 @@ website:
       
         
          
-  #comments:
-    # disqus short name
+  comments:
+    #disqus short name
     #disqusShortname: "alierreng"
-    #giscus:
-      #repo: tongakuot/cushanalytics_comments
+    giscus:
+      repo: tongakuot/cushanalytics
       
 format:
   html:
