@@ -11,7 +11,7 @@ website:
       - text: "About Me"
         href: about.qmd
       - text: "Resume"
-        href: "https://cushanalytics.com/images/resume.pdf/"
+        href: "https://cushanalytics.com/resume.pdf/"
       - icon: github
         href: https://github.com/tongakuot/
       - icon: twitter
@@ -28,7 +28,7 @@ website:
         - text: "About Me"
           href: about.qmd
         - text: "Resume"
-          href: "https://cushanalytics.com/images/resume.pdf/"
+          href: "https://cushanalytics.com/resume.pdf/"
          
   comments:
     giscus:
