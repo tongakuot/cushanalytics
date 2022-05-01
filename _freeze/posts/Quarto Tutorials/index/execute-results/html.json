@@ -1,7 +1,7 @@
 {
-  "hash": "4461c06f48cb2645e278221a1cffad0f",
+  "hash": "68c4914346d3f9bb3c0fe76844ab9e0b",
   "result": {
-    "markdown": "---\ntitle: \"Quarto Tutorial 1\"\nauthor: \"Alier Reng\"\ndate: \"4/29/2022\"\ndate-format: full\ncategories: [Quarto, Python, R, Data Science]\nimage: \"banner-5.jpg\"\n---\n\n$f(x) = \\int(3x^3 + 4x)dx$\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Libraries\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(vroom)\n```\n:::\n\n::: {.cell}\n\n```{.python .cell-code}\n4+9\n```\n\n::: {.cell-output-stdout}\n```\n13\n```\n:::\n:::",
+    "markdown": "---\ntitle: \"Quarto Tutorial 1\"\nauthor: \"Alier Reng\"\ndate: \"4/29/2022\"\ndate-format: full\ndescription: \"\"\ncategories: [Quarto, Python, R, Data Science]\nimage: \"banner-5.jpg\"\n---\n\n$f(x) = \\int(3x^3 + 4x)dx$\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Libraries\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(vroom)\n```\n:::\n\n::: {.cell}\n\n```{.python .cell-code}\n4+9\n```\n\n::: {.cell-output-stdout}\n```\n13\n```\n:::\n:::",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

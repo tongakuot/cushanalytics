@@ -16,23 +16,18 @@ about:
       href: https://www.youtube.com/channel/UCWmRRNbHLNtbb13Hi1ucsFA
 ---
 
-:::{#hero-heading}
-
+::: {#hero-heading}
 Alier Reng is a data science professional, statistician, and educator with over 5-year experience in healthcare analytics and more than seven years of university teaching experience.
 Alier is a passionate and results-oriented data scientist with a proven record of project completion with efficiency and speed.
 
-
 ## Education
 
-LeTourneau University, Longview, TX \|
-MBA in Information Systems Management \| Jan 2016 - Dec 2017
+LeTourneau University, Longview, TX \| MBA in Information Systems Management \| Jan 2016 - Dec 2017
 
-Middle Tennessee State University, Murfreesboro, TN \|
-M.S.
+Middle Tennessee State University, Murfreesboro, TN \| M.S.
 in Biostatistics \| Aug 2009 - May 2011
 
-University of Texas at Dallas, Richardson, TX \|
-B.S.
+University of Texas at Dallas, Richardson, TX \| B.S.
 in Neuroscience \| Aug 2005 - May 2008
 
 ## Experience
@@ -43,9 +38,4 @@ Data Analyst \| May 2021 - present
 LifePoint Health \| Data Analyst \| Dec 2016 - May 2021
 
 MTSU \| Lecturer \| Aug 2011 - Dec 2016
-
 :::
-
-
-
-
