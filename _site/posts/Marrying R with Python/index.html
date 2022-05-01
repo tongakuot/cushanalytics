@@ -186,7 +186,7 @@
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
 
 
@@ -535,13 +535,13 @@ Jonglei           Male   15-29        195110</code></pre>
 </section>
 </section>
 </section>
-<section id="marrying-r-with-python" class="level2 page-columns page-full">
+<section id="marrying-r-with-python" class="level2">
 <h2 class="anchored" data-anchor-id="marrying-r-with-python">Marrying <code>R</code> with <code>Python</code></h2>
 <p>As we stated in the introduction section, this article aims to demonstrate that data scientists and data analysts (and indeed, data teams) can benefit tremendously by leveraging the powers and strengths of both <code>R</code> and <code>Python</code> instead of viewing these data science programming languages as rivals. Hence, in the below sections, we’ll visualize our data with the <code>ggplot2</code> package, one of the <code>tidyverse</code> core packages.</p>
-<section id="visualizing-the-data-with-ggplot2" class="level3 page-columns page-full">
+<section id="visualizing-the-data-with-ggplot2" class="level3">
 <h3 class="anchored" data-anchor-id="visualizing-the-data-with-ggplot2">Visualizing the Data with <code>ggplot2</code></h3>
 <p><code>ggplot2</code> is the most popular <code>R</code> data visualization package by Hadley Wickham. To begin with, we used <code>py$</code> to call <code>Python's</code> object within the <code>R's code chunk</code> in the below chunk. Next, we initialized the canvas with the <code>ggplot()</code> function and assigned the <code>state</code> column to the x-axis and p<code>opulation</code> column to the y-axis. Then, we sorted the <code>state</code> column values using the <code>fct_order()</code> and <code>fct_rev()</code> functions from the <code>forcats</code> package. This orders our data in descending order using the population column.</p>
-<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert Python dataframe into R data frame/tibble</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>state_tbl <span class="ot">&lt;-</span> py<span class="sc">$</span>state_df </span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a> </span>
@@ -594,7 +594,7 @@ Jonglei           Male   15-29        195110</code></pre>
 <span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>       </span>
 <span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the graph.</span></span>
 <span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>state_g </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display column-page">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
@@ -602,7 +602,7 @@ Jonglei           Male   15-29        195110</code></pre>
 </div>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb29"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph population by state and gender in ascending order.</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>gender_tbl <span class="ot">&lt;-</span> py<span class="sc">$</span>gender_df</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -647,7 +647,11 @@ Jonglei           Male   15-29        195110</code></pre>
 <span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the graph</span></span>
 <span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a>gender_g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>&nbsp;We visualized the data by state and by state and gender in the preceding two sections. Moreover, we organized the data by population in descending order. It is best to display the data in ascending or descending order to avoid confusing your readers.</p>
