@@ -7,6 +7,10 @@ website:
   
   navbar:
     logo: images/logo.png
+    reader-mode: true
+    # google analytics
+    googleAnalytics: "ua-164226979-1"
+    disqusShortname: "alierreng" 
     right:
       - text: "About Me"
         href: about.qmd
@@ -29,10 +33,24 @@ website:
           href: about.qmd
         - text: "Resume"
           href: "https://cushanalytics.com/resume.pdf/"
+          
+      right: 
+       - icon: github
+         href: https://github.com/tongakuot/
+       - icon: twitter
+         href: https://twitter.com/tongakuot/
+       - icon: linkedin
+         href: https://linkedin.com/in/tongakuot/
+       - icon: youtube
+         href: https://www.youtube.com/channel/UCWmRRNbHLNtbb13Hi1ucsFA
+      
+        
          
-  comments:
-    giscus:
-      repo: tongakuot/cushanalytics_comments
+  #comments:
+    # disqus short name
+    #disqusShortname: "alierreng"
+    #giscus:
+      #repo: tongakuot/cushanalytics_comments
       
 format:
   html:
