@@ -11,7 +11,7 @@ image: "r-python.png"
 ## Introduction
 
 \
-Most data scientists and data analysts would agree with the assertion that *data scientists and data analysts spend about 80% of their time cleaning and transforming data - or, put, performing data wrangling.* Because it's imperative to transform your data into a tidy form before using it in your data science project.
+Most data scientists and data analysts would agree with the assertion that *data scientists and data analysts spend about 80% of their time cleaning and transforming data - or, simply put, performing data wrangling.* Because it's imperative to transform your data into a tidy form before using it in your data science project.
 This means that aspiring data scientists and data analysts must learn data manipulation techniques and know the data munging tools in their programming languages of choice to succeed in their data science careers.
 This post demonstrates how to perform data wrangling with the `pandas` library - I love `pandas`, although I use `R` almost exclusively at work.
 We will first transform and manipulate the data with `pandas` and then visualize the results with the `ggplot2` package.
@@ -26,7 +26,7 @@ So keep an eye on our next article - we plan to be releasing at least one piece 
 
 ### Loading `R` Packages
 
-Here we'll load both `tidyverse`, even though we'll use `dplyr` and `ggplot2` from `tidyverse` (we could have loaded these packages individually, but we decided to load them this way).
+Here we'll load both `tidyverse` and `reticulate` even though we'll use `dplyr` and `ggplot2` from `tidyverse` (we could have loaded these packages individually, but we decided to load them this way).
 
 ```{r}
 # Libraries
@@ -160,7 +160,7 @@ In the preceding code chunk, we first filtered the dataset using the desired col
 
 Further, as you can see above, the `Variable Name` column contains three pieces of information: `Population`, `Total/Male/Female,` and `(Number)`, separated by both commas and spaces.
 This column contains gender information, so we're only interested in the `Total/Male/Female` portion of this column.
-Therefore, we split this column into three columns using the `.split()` method (combined with str since this is a string), but we only kept the middle portion using its index.
+Therefore, we split this column into three columns using the `.split()` method (combined with `str`since this is a string), but we only kept the middle portion using its index.
 
 Next, we created new age categories to reduce the number of already existing age groups and used `replace()` to overwrite old categories.
 Then, we converted the population column `2008` to integer or numeric values using the `.astype()` method and supplied it with the data type int, short for integer.
@@ -221,15 +221,15 @@ Additionally, we sorted our data using the `.sort_values(),`and we set ascending
 ```{python}
 # Pivot the dataset
 table_1 = (df
-         .pivot_table(index = ['state', 'gender'],
-         values = 'population',  
-         aggfunc = np.sum, margins = True, 
-         margins_name = 'total population')
-         .sort_values(['population'], ascending = False)
+           .pivot_table(index = ['state', 'gender'],
+           values = 'population',  
+           aggfunc = np.sum, margins = True, 
+           margins_name = 'total population')
+           .sort_values(['population'], ascending = False)
          )
  
 # Print the output
-table_1
+table_1.head()
 ```
 
 #### Summarizing by State, Gender, and Age Category - `pivot_table()`
@@ -250,22 +250,22 @@ table_2.head(10)
 
 Above, we tabulated our data with the `pivot_table()` method.
 Next, we sorted the table by population column, and then we displayed the table.
-Here it's worth noting that we obtained the same results that we got using the `groupb()` method.
+Here it's worth noting that we obtained the same results that we got using the `groupby()` method.
 
 > Grouping is one of the most powerful tools that `pandas` provides.
-> It is the underpinning of the `.pivot_table` method, which in turn implements the \`pd.cross_tab function.
+> It is the underpinning of the `.pivot_table` method, which in turn implements the `pd.cross_tab` function.
 > *(Effective Pandas by Matt Harrison, 20221 p. 326)*
 
 ## Marrying `R` with `Python`
 
-As we stated in the introduction section, this article aims to demonstrate that data scientists and data analysts (and indeed, data teams) can benefit tremendously by leveraging the powers and strengths of both `R` and `Python` instead of viewing these data science programming languages as rivals.
+As we stated in the introductory section, this article aims to demonstrate that data scientists and data analysts (and indeed, data teams) can benefit tremendously by leveraging the powers and strengths of both `R` and `Python` instead of viewing these data science programming languages as rivals.
 Hence, in the below sections, we'll visualize our data with the `ggplot2` package, one of the `tidyverse` core packages.
 
 ### Visualizing the Data with `ggplot2`
 
 `ggplot2` is the most popular `R` data visualization package by Hadley Wickham.
 To begin with, we used `py$` to call `Python's` object within the `R's code chunk` in the below chunk.
-Next, we initialized the canvas with the `ggplot()` function and assigned the `state` column to the x-axis and p`opulation` column to the y-axis.
+Next, we initialized the canvas with the `ggplot()` function and assigned the `state` column to the x-axis and `population` column to the y-axis.
 Then, we sorted the `state` column values using the `fct_order()` and `fct_rev()` functions from the `forcats` package.
 This orders our data in descending order using the population column.
 
@@ -377,7 +377,7 @@ It is best to display the data in ascending or descending order to avoid confusi
 ## Closing Remarks
 
 This post demonstrated how to perform data wrangling with `pandas` and visualize it with `ggplot2` in `RStudio`.
-A word of caution: we are not saying that this is the actual population of South Sudan.
+A word of caution, though: we are not saying that this is the actual population of South Sudan.
 Instead, we used the data to highlight a few data wrangling techniques within the `pandas` library.
 
 However, on the inferential side, government agencies would draw decisions about public amenities such as schools, kindergartens, maternity wards, and healthcare centers and where to build them from this analysis.

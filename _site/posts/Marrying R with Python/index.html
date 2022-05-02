@@ -195,7 +195,7 @@
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p><br>
-Most data scientists and data analysts would agree with the assertion that <em>data scientists and data analysts spend about 80% of their time cleaning and transforming data - or, put, performing data wrangling.</em> Because it’s imperative to transform your data into a tidy form before using it in your data science project. This means that aspiring data scientists and data analysts must learn data manipulation techniques and know the data munging tools in their programming languages of choice to succeed in their data science careers. This post demonstrates how to perform data wrangling with the <code>pandas</code> library - I love <code>pandas</code>, although I use <code>R</code> almost exclusively at work. We will first transform and manipulate the data with <code>pandas</code> and then visualize the results with the <code>ggplot2</code> package.</p>
+Most data scientists and data analysts would agree with the assertion that <em>data scientists and data analysts spend about 80% of their time cleaning and transforming data - or, simply put, performing data wrangling.</em> Because it’s imperative to transform your data into a tidy form before using it in your data science project. This means that aspiring data scientists and data analysts must learn data manipulation techniques and know the data munging tools in their programming languages of choice to succeed in their data science careers. This post demonstrates how to perform data wrangling with the <code>pandas</code> library - I love <code>pandas</code>, although I use <code>R</code> almost exclusively at work. We will first transform and manipulate the data with <code>pandas</code> and then visualize the results with the <code>ggplot2</code> package.</p>
 <p><code>Pandas</code> was written by <em>Wes McKinney</em> as <em><strong>” the open-source Python library for data analysis</strong>.” (Python for Data Analysis, 2017, pp.111)</em></p>
 <blockquote class="blockquote">
 <p><code>pandas</code> is built on top of <code>NumPy</code> and makes it easy to use in <code>NumPy-centric</code> applications. <em>(Python for Data Analysis, 2017, pp.111)</em></p>
@@ -203,7 +203,7 @@ Most data scientists and data analysts would agree with the assertion that <em>d
 <p>This is the first article in our Data Wrangling With pandas series. So keep an eye on our next article - we plan to be releasing at least one piece quarterly.</p>
 <section id="loading-r-packages" class="level3">
 <h3 class="anchored" data-anchor-id="loading-r-packages">Loading <code>R</code> Packages</h3>
-<p>Here we’ll load both <code>tidyverse</code>, even though we’ll use <code>dplyr</code> and <code>ggplot2</code> from <code>tidyverse</code> (we could have loaded these packages individually, but we decided to load them this way).</p>
+<p>Here we’ll load both <code>tidyverse</code> and <code>reticulate</code> even though we’ll use <code>dplyr</code> and <code>ggplot2</code> from <code>tidyverse</code> (we could have loaded these packages individually, but we decided to load them this way).</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
@@ -373,7 +373,7 @@ dtype: int64</code></pre>
 </section>
 <section id="using-the-split" class="level3">
 <h3 class="anchored" data-anchor-id="using-the-split">Using the split()</h3>
-<p>Further, as you can see above, the <code>Variable Name</code> column contains three pieces of information: <code>Population</code>, <code>Total/Male/Female,</code> and <code>(Number)</code>, separated by both commas and spaces. This column contains gender information, so we’re only interested in the <code>Total/Male/Female</code> portion of this column. Therefore, we split this column into three columns using the <code>.split()</code> method (combined with str since this is a string), but we only kept the middle portion using its index.</p>
+<p>Further, as you can see above, the <code>Variable Name</code> column contains three pieces of information: <code>Population</code>, <code>Total/Male/Female,</code> and <code>(Number)</code>, separated by both commas and spaces. This column contains gender information, so we’re only interested in the <code>Total/Male/Female</code> portion of this column. Therefore, we split this column into three columns using the <code>.split()</code> method (combined with <code>str</code>since this is a string), but we only kept the middle portion using its index.</p>
 <p>Next, we created new age categories to reduce the number of already existing age groups and used <code>replace()</code> to overwrite old categories. Then, we converted the population column <code>2008</code> to integer or numeric values using the <code>.astype()</code> method and supplied it with the data type int, short for integer. Lastly, we used the <code>.query()</code> to filter out the <code>total</code> rows in <code>gender</code> and the <code>age category</code> columns, grouped the data by <em>state</em>, <em>gender</em>, and <em>age category</em>, calculated the population’s sum, and then reset the index with <code>.reset_index()</code>.</p>
 </section>
 <section id="the-replace-method" class="level3">
@@ -464,39 +464,23 @@ dtype: int64</code></pre>
 <div class="cell">
 <div class="sourceCode" id="cb24"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot the dataset</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>table_1 <span class="op">=</span> (df</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>         .pivot_table(index <span class="op">=</span> [<span class="st">'state'</span>, <span class="st">'gender'</span>],</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>         values <span class="op">=</span> <span class="st">'population'</span>,  </span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>         aggfunc <span class="op">=</span> np.<span class="bu">sum</span>, margins <span class="op">=</span> <span class="va">True</span>, </span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>         margins_name <span class="op">=</span> <span class="st">'total population'</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>         .sort_values([<span class="st">'population'</span>], ascending <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>           .pivot_table(index <span class="op">=</span> [<span class="st">'state'</span>, <span class="st">'gender'</span>],</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>           values <span class="op">=</span> <span class="st">'population'</span>,  </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>           aggfunc <span class="op">=</span> np.<span class="bu">sum</span>, margins <span class="op">=</span> <span class="va">True</span>, </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>           margins_name <span class="op">=</span> <span class="st">'total population'</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>           .sort_values([<span class="st">'population'</span>], ascending <span class="op">=</span> <span class="va">False</span>)</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>         )</span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the output</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>table_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>table_1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>                                population
-state                   gender            
-total population                   8260490
-Jonglei                 Male        734327
-                        Female      624275
-Central Equatoria       Male        581722
-Upper Nile              Male        525430
-Central Equatoria       Female      521835
-Warrap                  Female      502194
-                        Male        470734
-Eastern Equatoria       Male        465187
-                        Female      440974
-Upper Nile              Female      438923
-Northern Bahr el Ghazal Female      372608
-Lakes                   Male        365880
-Northern Bahr el Ghazal Male        348290
-Lakes                   Female      329850
-Western Equatoria       Male        318443
-                        Female      300586
-Unity                   Male        300247
-                        Female      285554
-Western Bahr el Ghazal  Male        177040
-                        Female      156391</code></pre>
+<pre><code>                          population
+state             gender            
+total population             8260490
+Jonglei           Male        734327
+                  Female      624275
+Central Equatoria Male        581722
+Upper Nile        Male        525430</code></pre>
 </div>
 </div>
 <section id="summarizing-by-state-gender-and-age-category---pivot_table" class="level4">
@@ -528,19 +512,19 @@ Eastern Equatoria Male   0-14         212728
 Jonglei           Male   15-29        195110</code></pre>
 </div>
 </div>
-<p>Above, we tabulated our data with the <code>pivot_table()</code> method. Next, we sorted the table by population column, and then we displayed the table. Here it’s worth noting that we obtained the same results that we got using the <code>groupb()</code> method.</p>
+<p>Above, we tabulated our data with the <code>pivot_table()</code> method. Next, we sorted the table by population column, and then we displayed the table. Here it’s worth noting that we obtained the same results that we got using the <code>groupby()</code> method.</p>
 <blockquote class="blockquote">
-<p>Grouping is one of the most powerful tools that <code>pandas</code> provides. It is the underpinning of the <code>.pivot_table</code> method, which in turn implements the `pd.cross_tab function. <em>(Effective Pandas by Matt Harrison, 20221 p.&nbsp;326)</em></p>
+<p>Grouping is one of the most powerful tools that <code>pandas</code> provides. It is the underpinning of the <code>.pivot_table</code> method, which in turn implements the <code>pd.cross_tab</code> function. <em>(Effective Pandas by Matt Harrison, 20221 p.&nbsp;326)</em></p>
 </blockquote>
 </section>
 </section>
 </section>
 <section id="marrying-r-with-python" class="level2">
 <h2 class="anchored" data-anchor-id="marrying-r-with-python">Marrying <code>R</code> with <code>Python</code></h2>
-<p>As we stated in the introduction section, this article aims to demonstrate that data scientists and data analysts (and indeed, data teams) can benefit tremendously by leveraging the powers and strengths of both <code>R</code> and <code>Python</code> instead of viewing these data science programming languages as rivals. Hence, in the below sections, we’ll visualize our data with the <code>ggplot2</code> package, one of the <code>tidyverse</code> core packages.</p>
+<p>As we stated in the introductory section, this article aims to demonstrate that data scientists and data analysts (and indeed, data teams) can benefit tremendously by leveraging the powers and strengths of both <code>R</code> and <code>Python</code> instead of viewing these data science programming languages as rivals. Hence, in the below sections, we’ll visualize our data with the <code>ggplot2</code> package, one of the <code>tidyverse</code> core packages.</p>
 <section id="visualizing-the-data-with-ggplot2" class="level3">
 <h3 class="anchored" data-anchor-id="visualizing-the-data-with-ggplot2">Visualizing the Data with <code>ggplot2</code></h3>
-<p><code>ggplot2</code> is the most popular <code>R</code> data visualization package by Hadley Wickham. To begin with, we used <code>py$</code> to call <code>Python's</code> object within the <code>R's code chunk</code> in the below chunk. Next, we initialized the canvas with the <code>ggplot()</code> function and assigned the <code>state</code> column to the x-axis and p<code>opulation</code> column to the y-axis. Then, we sorted the <code>state</code> column values using the <code>fct_order()</code> and <code>fct_rev()</code> functions from the <code>forcats</code> package. This orders our data in descending order using the population column.</p>
+<p><code>ggplot2</code> is the most popular <code>R</code> data visualization package by Hadley Wickham. To begin with, we used <code>py$</code> to call <code>Python's</code> object within the <code>R's code chunk</code> in the below chunk. Next, we initialized the canvas with the <code>ggplot()</code> function and assigned the <code>state</code> column to the x-axis and <code>population</code> column to the y-axis. Then, we sorted the <code>state</code> column values using the <code>fct_order()</code> and <code>fct_rev()</code> functions from the <code>forcats</code> package. This orders our data in descending order using the population column.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert Python dataframe into R data frame/tibble</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>state_tbl <span class="ot">&lt;-</span> py<span class="sc">$</span>state_df </span>
@@ -659,7 +643,7 @@ Jonglei           Male   15-29        195110</code></pre>
 </section>
 <section id="closing-remarks" class="level2">
 <h2 class="anchored" data-anchor-id="closing-remarks">Closing Remarks</h2>
-<p>This post demonstrated how to perform data wrangling with <code>pandas</code> and visualize it with <code>ggplot2</code> in <code>RStudio</code>. A word of caution: we are not saying that this is the actual population of South Sudan. Instead, we used the data to highlight a few data wrangling techniques within the <code>pandas</code> library.</p>
+<p>This post demonstrated how to perform data wrangling with <code>pandas</code> and visualize it with <code>ggplot2</code> in <code>RStudio</code>. A word of caution, though: we are not saying that this is the actual population of South Sudan. Instead, we used the data to highlight a few data wrangling techniques within the <code>pandas</code> library.</p>
 <p>However, on the inferential side, government agencies would draw decisions about public amenities such as schools, kindergartens, maternity wards, and healthcare centers and where to build them from this analysis. The distribution of the national resources and state representations could be determined by this analysis as well. However, that’s not the objective of our post, and thus, we will leave it there.</p>
 </section>
 <section id="references" class="level2">
